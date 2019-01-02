@@ -1,22 +1,58 @@
 import React, { Component } from "react";
 import SelectorsContainer from "../SeletorsContainer";
+import { connect } from "react-redux";
 
-export default class MainContainer extends Component {
+class MainContainer extends Component {
   state = {
-    cities: ["London", "Stockholm", "Kyiv"],
+    currentCity: "London",
+    currentMetric: { name: "Celsius", units: "metric" },
+    cities: [
+      { value: "London", label: "London" },
+      { value: "Stockholm", label: "Stockholm" },
+      { value: "Kyiv", label: "Kyiv" }
+    ],
     metrics: [
-      { name: "Kelvin", units: "" },
-      { name: "Celsius", units: "metric" },
-      { name: "Fahrenheit", units: "imperial" }
+      { label: "Celsius", value: "metric" },
+      { label: "Kelvin", value: "" },
+      { label: "Fahrenheit", value: "imperial" }
     ]
   };
+
   render() {
     const { cities, metrics } = this.state;
+
     return (
       <div>
-        HEllo
-        <SelectorsContainer cities={cities} metrics={metrics} />
+        {this.props.city}
+        <SelectorsContainer
+          cities={cities}
+          metrics={metrics}
+          handleOnChangeCity={this.props.chooseCity}
+          handleOnChangeMetric={this.props.chooseMetric}
+        />
       </div>
     );
   }
 }
+const mapStateToProps = state => ({
+  city: state.currentCity,
+  metric: state.currentMetric
+});
+const mapDispatchToProps = dispatch => ({
+  chooseCity(city) {
+    dispatch({
+      type: "CHOOSE_CITY",
+      payload: city.value
+    });
+  },
+  chooseMetric(metric) {
+    dispatch({
+      type: "CHOOSE_METRIC",
+      payload: metric.value
+    });
+  }
+});
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MainContainer);
