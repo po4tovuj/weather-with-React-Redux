@@ -1,4 +1,3 @@
-## `whats do first`
 
 Clone this repo, write npm install and the start project with npm start.
 
