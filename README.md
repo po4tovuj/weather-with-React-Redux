@@ -1,5 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-### `whats do first`
+## `whats do first`
 
 Clone this repo, write npm install and the start project with npm start.
 
