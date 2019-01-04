@@ -11,9 +11,7 @@
     "react-dom": "^16.7.0",
     "react-redux": "^6.0.0",
     "react-scripts": "^2.1.2",
-    "reactstrap": "^6.5.0",
     "redux": "^4.0.1",
-    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
@@ -33,6 +31,7 @@
   ],
   "devDependencies": {
     "react-select": "^2.1.2",
-    "redux-devtools-extension": "^2.13.7"
+    "redux-devtools-extension": "^2.13.7",
+    "redux-logger": "^3.0.6"
   }
 }
