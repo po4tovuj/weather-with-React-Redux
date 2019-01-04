@@ -1,4 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### `whats do first`
+
+Clone this repo, write npm install and the start project with npm start.
 
 ## Available Scripts
 
@@ -22,7 +25,7 @@ Your app is ready to be deployed!
 
 ### `some description`
 
-All of this was took near 24 hours, because i didn't work with Redux before, and most of time it was took to read documentation and watch a few videos for understandig how i need to use it and what's the difference between Redax and Vuex .
+All of this work took near 24 hours, because i didn't work with Redux before, and most of time it was took to read documentation and watch a few videos for understandig how i need to use it and what's the difference between Redax and Vuex .
 
 I was adding setTimeout in action getWeather because data from API comes too fast, and with adding Timeout i want to show that loader is working.
 
