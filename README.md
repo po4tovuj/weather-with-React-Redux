@@ -1,5 +1,5 @@
 
-Clone this repo, write npm install and the start project with npm start.
+Clone this repo, write npm install and then start project with npm start.
 
 ## Available Scripts
 
