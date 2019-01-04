@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import withLoader from "../../HOC/withLoader";
 
 import "./style.sass";
 
@@ -28,6 +30,7 @@ class WeatherForm extends Component {
       humidity,
       date
     } = this.props.weather.data;
+    console.log(this.props);
     return (
       <div className="weather">
         <h2 className="weather__header">{name}</h2>
@@ -63,4 +66,40 @@ class WeatherForm extends Component {
   }
 }
 
-export default WeatherForm;
+WeatherForm.defaultProps = {
+  weather: {
+    data: {
+      name: "",
+      weatherCondition: "",
+      wind: NaN,
+      temp: NaN,
+      pressure: NaN,
+      humidity: NaN,
+      date: null
+    },
+    error: null,
+    isLoading: false
+  }
+};
+
+WeatherForm.propTypes = {
+  city: PropTypes.string.isRequired,
+  metric: PropTypes.string.isRequired,
+  weather: PropTypes.shape({
+    data: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      weatherCondition: PropTypes.string.isRequired,
+      wind: PropTypes.number.isRequired,
+      temp: PropTypes.number.isRequired,
+      pressure: PropTypes.number.isRequired,
+      humidity: PropTypes.number.isRequired,
+      date: PropTypes.shape({})
+    }),
+    isLoading: PropTypes.bool,
+    error: PropTypes.shape({})
+  })
+
+  // }).isRequired
+};
+
+export default withLoader(WeatherForm);

@@ -28,10 +28,14 @@ const key = "&appid=ab612ebf5375d77352246f16e80ad5c7";
 const baseUrl = "http://api.openweathermap.org/data/2.5/weather?q=";
 export const getWeather = (city, metric) => dispatch => {
   dispatch(getWeatherStart());
-  axios
-    .get(`${baseUrl}${city}${key}&units=${metric}`)
-    .then(({ data }) => dispatch(getWeatherSuccess(data)))
-    .catch(err => dispatch(getWeatherFail(err.response)));
+  setTimeout(
+    () =>
+      axios
+        .get(`${baseUrl}${city}${key}&units=${metric}`)
+        .then(({ data }) => dispatch(getWeatherSuccess(data)))
+        .catch(err => dispatch(getWeatherFail(err.response))),
+    1000
+  );
 };
 
 export const metricChange = metric => ({

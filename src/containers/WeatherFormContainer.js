@@ -5,7 +5,8 @@ import * as actions from "../actions";
 const mSTP = state => ({
   weather: state.weather,
   city: state.currentCity,
-  metric: state.currentMetric
+  metric: state.currentMetric,
+  isLoading: state.isLoading
 });
 const mDTP = dispatch => ({
   getWeather(city, metric) {

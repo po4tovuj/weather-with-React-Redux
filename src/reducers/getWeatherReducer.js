@@ -1,12 +1,17 @@
 import * as types from "../actions/ActionTypes";
 import { combineReducers } from "redux";
 
-function getWeatherReducer(
-  state = {
-    name: "London"
-  },
-  { type, payload }
-) {
+const initialState = {
+  name: "",
+  weatherCondition: "",
+  wind: NaN,
+  temp: NaN,
+  pressure: NaN,
+  humidity: NaN,
+  date: null
+};
+
+function getWeatherReducer(state = initialState, { type, payload }) {
   switch (type) {
     case types.GET_WEATHER_SUCCESS:
       return payload;

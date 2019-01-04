@@ -4,7 +4,7 @@ const Multiselect = ({ options, handleChangeSelect, className }) => {
   return (
     <div className={className}>
       <Select
-        defaultValue={options[0]} // value={value}
+        defaultValue={options[0]}
         onChange={handleChangeSelect}
         options={options}
       />
