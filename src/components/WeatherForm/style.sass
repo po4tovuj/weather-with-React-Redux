@@ -1,0 +1,21 @@
+.weather
+  text-align: center
+  display: flex
+  flex-direction: column
+  align-items: center
+  margin-left: 3rem
+  flex-grow: 1
+  &__header
+    margin-top: 0
+  &-info
+    width: 100%
+    border: 1px solid #000
+    &__description
+      border-bottom: 1px solid #000
+      padding: 10px 0
+      &:last-child
+        border: none
+@media screen and (max-width: 700px)
+  .weather
+    margin-left: 0
+    margin-top: 1rem

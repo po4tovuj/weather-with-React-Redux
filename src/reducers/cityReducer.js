@@ -1,7 +1,9 @@
-export default function cityReducer(state = "London", action) {
-  switch (action.type) {
-    case "CHOOSE_CITY":
-      return (state = action.payload);
+import * as types from "../actions/ActionTypes";
+
+export default function cityReducer(state = "London", { type, payload }) {
+  switch (type) {
+    case types.CITY_CHANGE:
+      return payload;
     default:
       return state;
   }

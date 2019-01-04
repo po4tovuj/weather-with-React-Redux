@@ -1,19 +1,27 @@
 import React from "react";
 import Multiselect from "../Multiselect";
+import "./style.sass";
 
-const SelectorsContainer = props => {
+const metrics = [
+  { label: "Celsius", value: "metric" },
+  { label: "Kelvin", value: "" },
+  { label: "Fahrenheit", value: "imperial" }
+];
+const cities = [
+  { value: "London", label: "London" },
+  { value: "Stockholm", label: "Stockholm" },
+  { value: "Kyiv", label: "Kyiv" }
+];
+const SelectorsList = ({ onMetricChange, onCityChange }) => {
   return (
-    <div className="col-lg-3 col-md-4 col-xs-12">
+    <div className="selectors-list">
       <Multiselect
-        className={"mb-3"}
-        options={props.cities}
-        handleChangeSelect={props.handleOnChangeCity}
+        className={"selectors-list__item"}
+        options={cities}
+        handleChangeSelect={onCityChange}
       />
-      <Multiselect
-        options={props.metrics}
-        handleChangeSelect={props.handleOnChangeMetric}
-      />
+      <Multiselect options={metrics} handleChangeSelect={onMetricChange} />
     </div>
   );
 };
-export default SelectorsContainer;
+export default SelectorsList;

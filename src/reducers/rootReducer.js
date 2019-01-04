@@ -1,9 +1,10 @@
 import { combineReducers } from "redux";
-import cityReducer from "./cityReducer";
+import getWeatherReducer from "./getWeatherReducer";
 import metricReducer from "./metricReducer";
-// import weatherParamsReducer from "./weatherParamsReducer";
+import cityReducer from "./cityReducer";
+
 export default combineReducers({
   currentCity: cityReducer,
+  weather: getWeatherReducer,
   currentMetric: metricReducer
-  // params: weatherParamsReducer
 });
